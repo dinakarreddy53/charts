@@ -2,9 +2,96 @@
 <html>
 <head>
 	<title>SVG Graphs</title>
-	<script type="text/javascript" src="svg.js"></script>
+	<!-- <script type="text/javascript" src="svg.js"></script> -->
 </head>
 <body>
-	<div id="svg_graph"> </div>
+    <div id="svg_graph" style="width:500px;height:500px;border:1px solid black;">
+        <svg width='500px' height='500px'>
+        <g>
+            <!-- <path stroke='green' stroke-width='1px' d='M50 50H500' /> -->
+            <!-- <path stroke='green' stroke-width='1px' d='M50 50V500' /> -->
+            <g>
+                <path stroke='green' stroke-width='1px' d='M50 0V450' />
+                <path stroke='green' stroke-width='1px' d='M50 450H500' />          
+            </g>
+
+            <g>
+                <!-- Left, Right, Top, Bottom --> 
+                <path stroke='green' stroke-width='1px' d='M40 0V450' />
+                <path stroke='green' stroke-width='1px' d='M40 0H35' />
+                <path stroke='green' stroke-width='1px' d='M40 112.5H35' />
+                <path stroke='green' stroke-width='1px' d='M40 225H35' />
+                <path stroke='green' stroke-width='1px' d='M40 337H35' />
+                <path stroke='green' stroke-width='1px' d='M40 450H35' />
+            </g>
+
+            <g>
+                <path stroke='green' stroke-width='1px' d='M50 460H500' />
+                <path stroke='green' stroke-width='1px' d='M50 460V465' />
+                <path stroke='green' stroke-width='1px' d='M162.5 460V465' />
+                <path stroke='green' stroke-width='1px' d='M275 460V465' />
+                <path stroke='green' stroke-width='1px' d='M387.5 460V465' />
+                <path stroke='green' stroke-width='1px' d='M500 460V465' />
+            </g>
+            <g>
+                <circle cx="50" cy="450" r="1" stroke="red" stroke-width="1" fill="yellow"/>
+                <circle cx="162.5" cy="337.5" r="1" stroke="red" stroke-width="1" fill="yellow"/>
+                <circle cx="275" cy="225" r="1" stroke="red" stroke-width="1" fill="yellow"/>
+                <circle cx="387.5" cy="112.5" r="1" stroke="red" stroke-width="1" fill="yellow"/>
+                <circle cx="500" cy="0" r="1" stroke="red" stroke-width="1" fill="yellow"/>
+            </g>
+            <g>
+                
+            </g>
+        </g>    
+        </svg>
+    </div>
+    
+    
+    <div style="clear:both">&nbsp;</div>
+
+
+    <div id="newGraph">
+        
+    </div>
+    
 </body>
 </html>
+
+
+
+<!--
+
+x-axis start point = 50, 450
+y-axis start point = 50, 0
+coverage area:
+x-axis = 500 - 50 = 450
+y-axis = 450
+
+Coordinates :
+
+x-axis = 100, 200, 250, 400, 500
+y-axis = 1,2,3,4,5
+
+x-axis divisions = 500-100 = 400 => max-min         no interval
+y-axis divisions = 5-1 = 4       => max-min         no interval
+
+x-axis 1unit = 450/400 = 1.125
+y-axis 1unit = 450/4 = 112.5
+
+New Coordinates :
+
+x-distance = 50;
+y-distance = 450;
+
+x-axis new coordinates = [1unit*(min-coordinate)]+x-distance
+y-axis new coordinates = y-distance-[1unit*(min-coordinate)]
+
+x-axis = [(1.125*0)+50, (1.125*100)+50, (1.125*200)+50, (1.125*300)+50, (1.125*400)+50]
+y-axis = [450-(112.5*(0)), 450-(112.5*1), 450-(112.5*2), 450-(112.5*3), 450-(112.5*4)]
+
+New Coordinate Lines:
+
+
+
+-->
