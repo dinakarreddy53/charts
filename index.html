@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>SVG Graphs</title>
-	<!-- <script type="text/javascript" src="svg.js"></script> -->
+	<script type="text/javascript">
+		window.isDeadly = function(){ return true; };
+		var canFly = function(){ return true; };
+		console.log(isNimble, canFly, isDeadly);
+		function isNimble(){ return true; } 
+	</script>
 </head>
 <body>
     <div id="svg_graph" style="width:500px;height:500px;border:1px solid black;">

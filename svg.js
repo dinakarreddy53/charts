@@ -1,41 +1,47 @@
+ "use strict";
 window.onload = function() {
-    DynamicVectorGraphs.set({
-        container:'svg_graph',
+    var myChart = DVGraphs({
+        container:'newGraph',
+        title:"New Graph",
+        sub_title:"New Graph",
+        legend: "New Graph",
+        width: 200,
+        height: 200,
         coordinates: {
-            x_axis:[{
-                    name:"Employee",
+            LineGraph: {
+                x_points:[{
+                    title:"Employee",
                     units:"",
-                    values:[10, 12, 35, 51, 66, 88, 100] // array/object/jsoon formats
+                    values:[10, 12, 35, 51, 66, 88, 100] // array/object/JSON formats
+                },{
+                    title:"Department",
+                    units:"",
+                    values:['Accounts', 'HR', 'Finance', 'Developer', 'Division Manager', 'Manager'] // array/object/JSON formats
                 }],
-            y_axis:[{
+                y_points:[{
                     name:"Total Cost",
                     units:"",
-                    values:[01, 18, 23, 40, 55, 62, 73] // array/object/jsoon formats
+                    values:[1, 18, 23, 40, 55, 62, 73] // array/object/JSON formats
+                },{
+                    name:"Total Cost",
+                    units:"",
+                    values:[1, 18, 23, 40, 55, 62] // array/object/JSON formats
                 }],
-            xy_axis:{
-                Jan:[10, 20], Feb:[30, 40], Mar:[50, 60], Apr:[30, 60], May:[30, 30]
+                xy_points:{ // x as key and y as values 
+                    Jan:[10, 20], Feb:[30, 40], Mar:[50, 60], Apr:[30, 60], May:[30, 30]
+                }
             }
         }
     });
 }
 
-var DynamicVectorGraphs = (function() {
-    var x_width;
-    var y_height;
-    var graphs = ['line','bar','pi','hybrid'];
 
-    var initialize = function() {
-        //finding the dimensions of the container
-        //dimension of a cotainer is not needed
+var DVGraphs = (function() {
 
-        x_width = '100%';
-        y_height = '100%';
 
-        //finding the container dimensions
-        //calculating the view box coordinates and x-axis and y-axis coordinates
-        //testing with the percentage and then testing with the pixcel values
-        //GenerateGraph();
-    };
+    var cal = function() {
+
+    }
 
     var Elements = function() {
 
@@ -43,7 +49,7 @@ var DynamicVectorGraphs = (function() {
 
     var GenerateGraph = function() {
         var element = new Elements();
-        var svgContainer = document.getElementById('svg_graph');
+        var svgContainer = document.getElementById('newGraph');
         var app1 = element.svgElement();
         var app2 = element.pathElement();
         alert(app1.appendChild(app2));
@@ -102,7 +108,7 @@ var DynamicVectorGraphs = (function() {
         return 'Test';
     };
 
-    return {
-        set: new initialize()
-    };
+    return function ini(I) {        
+                    
+    }
 }());
