@@ -37,11 +37,18 @@ window.onload = function() {
 
 
 var DVGraphs = (function() {
-
+    gd = {};
 
     var cal = function() {
 
     }
+
+    var Graph = function() {
+        /**
+            Create svg elements with given dimesions 
+
+        */
+    };
 
     var Elements = function() {
 
@@ -108,7 +115,16 @@ var DVGraphs = (function() {
         return 'Test';
     };
 
-    return function ini(I) {        
-                    
-    }
-}());
+    return function ini(I) {
+        swithch arguments.length:
+            case 1:
+                gd = I;
+                new Graph();
+            break;
+            case 2:            
+                //
+            break;
+            case 0:
+                alert('No Data is supplied');
+    };
+})();
