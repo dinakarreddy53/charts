@@ -1,4 +1,4 @@
- "use strict";
+"use strict";
 window.onload = function() {
     var myChart = DVGraphs({
         container:'newGraph',
@@ -27,9 +27,9 @@ window.onload = function() {
                     units:"",
                     values:[1, 18, 23, 40, 55, 62] // array/object/JSON formats
                 }],
-                xy_points:{ // x as key and y as values 
-                    Jan:[10, 20], Feb:[30, 40], Mar:[50, 60], Apr:[30, 60], May:[30, 30]
-                }
+                points:[
+                    {x:[], y:[]}
+                ]
             }
         }
     });
@@ -44,10 +44,7 @@ var DVGraphs = (function() {
     }
 
     var Graph = function() {
-        /**
-            Create svg elements with given dimesions 
-
-        */
+        
     };
 
     var Elements = function() {
@@ -116,15 +113,18 @@ var DVGraphs = (function() {
     };
 
     return function ini(I) {
-        swithch arguments.length:
-            case 1:
-                gd = I;
-                new Graph();
-            break;
-            case 2:            
-                //
-            break;
-            case 0:
-                alert('No Data is supplied');
+        alert(I.width);
+        return {
+            restart: restart(),
+            reset: reset(),
+            remove:remove()
+        };
     };
 })();
+
+
+
+/*
+    1. Logger
+    2. 
+*/
